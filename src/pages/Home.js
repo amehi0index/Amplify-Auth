@@ -7,10 +7,11 @@ import ConfirmSignUp from '../components/ConfirmSignUp'
 import ForgotPassword from '../components/ForgotPassword'
 import ForgotPasswordSubmit from '../components/ForgotPasswordSubmit'
 
-import  Amplify from 'aws-amplify'
-import config from '../aws-exports'
+// import  Amplify from 'aws-amplify'
+// import config from '../aws-exports'
+// Amplify.configure(config)
+
 import UserPosts from '../components/UserPosts'
-Amplify.configure(config)
 
 function Home({ uiState, setUiState, checkUser }) {
  
