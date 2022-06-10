@@ -4,27 +4,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import awsconfig from '../aws-exports'
-import {Amplify} from 'aws-amplify'
-
-const configureAmplify = () => {
-  const urlsIn = awsconfig.oauth.redirectSignIn.split(',')
-  const urlsOut = awsconfig.oauth.redirectSignOut.split(',')
-  const currentHost = location.protocol + '//' + location.host
-  const isCurrentHost = (url) => url.includes(currentHost)
-  const newUrls = {
-    redirectSignIn: urlsIn.find(url => isCurrentHost(url)),
-    redirectSignOut: urlsOut.find(url => isCurrentHost(url))
-  }
-  Amplify.configure({
-    ...awsconfig,
-    oauth: {
-      ...awsconfig.oauth,
-      ...newUrls
-    }
-  })
-}
-
+import  Amplify from 'aws-amplify'
+import config from './aws-exports'
+Amplify.configure(config)
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
