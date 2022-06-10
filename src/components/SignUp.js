@@ -1,5 +1,4 @@
 
-import { Auth } from 'aws-amplify'
 import Input from './Input';
 
 const SignUp = ({ onChange, setUiState, signUp }) => {

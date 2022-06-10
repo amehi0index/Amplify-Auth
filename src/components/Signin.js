@@ -1,5 +1,4 @@
-import React from 'react'
-import { Auth } from 'aws-amplify'
+
 import SocialSignIn from './SocialSignin'
 import Input from './Input';
 

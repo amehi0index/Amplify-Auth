@@ -1,5 +1,4 @@
-import { input } from 'aws-amplify'
-import React from 'react'
+
 
 const Input= (props) => {
   return (
