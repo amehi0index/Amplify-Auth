@@ -4,10 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import  Amplify from 'aws-amplify'
-import config from './aws-exports'
-Amplify.configure(config)
-
+import Amplify from "aws-amplify";
+import awsconfig from "./aws-exports";
+awsconfig.oauth.redirectSignIn = `${window.location.origin}/`;
+awsconfig.oauth.redirectSignOut = `${window.location.origin}/`;
+Amplify.configure(awsconfig);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,5 +18,5 @@ root.render(
 );
 
 
-serviceWorker.unregister();
+// serviceWorker.unregister();
 
