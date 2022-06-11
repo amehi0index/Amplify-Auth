@@ -30,6 +30,7 @@ function Home({ uiState, setUiState, checkUser }) {
         try {
             await Auth.signIn(email, password) 
             checkUser()
+            setUiState('signedIn')
             console.log(uiState)
         } catch (error) {
             console.log('error signing in', error);
