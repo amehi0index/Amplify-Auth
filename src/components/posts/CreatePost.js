@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { API } from 'aws-amplify'
 import { v4 as uuid } from 'uuid'
-import SimpleMDE from "react-simplemde-editor"
-import "easymde/dist/easymde.min.css"
+// import SimpleMDE from "react-simplemde-editor"
+// import "easymde/dist/easymde.min.css"
 import { createPost } from '../../graphql/mutations'
 
 const initialState = { title: '', content: '' }
@@ -50,7 +50,12 @@ function CreatePost() {
               value={post.title}
               className="border-b pb-2 text-lg my-4 p-2 focus:outline-none w-full font-light text-gray-500 placeholder-gray-500 y-2 rounded"
             /> 
-            <SimpleMDE value={post.content} onChange={value => setPost({ ...post, content: value })} />
+            {/* <SimpleMDE value={post.content} onChange={value => setPost({ ...post, content: value })} /> */}
+              <textarea
+                value={post.content}
+                onChange={value => setPost({ ...post, content: value })}
+                className="border-b pb-2 text-lg my-4 focus:outline-none w-full  h-64 font-light text-gray-500 placeholder-gray-500 y-2 rounded"
+              />
             <button
               type="button"
               className="mb-4 bg-purple-500 text-white font-semibold px-8 py-2 rounded-lg"

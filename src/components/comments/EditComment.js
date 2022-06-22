@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { API } from 'aws-amplify'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
-import SimpleMDE from "react-simplemde-editor"
-import "easymde/dist/easymde.min.css"
+// import SimpleMDE from "react-simplemde-editor"
+// import "easymde/dist/easymde.min.css"
 import { updateComment } from '../../graphql/mutations'
 import { getComment } from '../../graphql/queries'
 
@@ -17,7 +17,7 @@ const EditComment = () => {
 
   useEffect(() => {
     fetchComment()
-   }, [])
+  }, [])
 
   async function fetchComment() {
     if (!id) return
@@ -51,7 +51,12 @@ const EditComment = () => {
         <p className="text-3xl text-white font-bold">Edit Comment</p>
         <div className="container-fluid flex  w-full h-full justify-center px-4 my-5 rounded-sm"> 
           <div className="flex flex-col justify-center w-full">
-            <SimpleMDE value={comment.content} onChange={value => setComment({ ...comment, content: value })} />
+            {/* <SimpleMDE value={comment.content} onChange={value => setComment({ ...comment, content: value })} /> */}
+             <textarea
+                value={comment.content}
+                onChange={value => setComment({ ...comment, content: value })}
+                className="border-b pb-2 text-lg my-4 focus:outline-none w-full  h-64 font-light text-gray-500 placeholder-gray-500 y-2 rounded"
+              />
             <button
              className="mb-4 bg-teal-600 text-white font-semibold px-8 py-2 rounded-lg"
               onClick={updateCurrentComment}>Update Comment</button>
