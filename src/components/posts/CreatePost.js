@@ -53,8 +53,8 @@ function CreatePost() {
             {/* <SimpleMDE value={post.content} onChange={value => setPost({ ...post, content: value })} /> */}
               <textarea
                 value={post.content}
-                onChange={value => setPost({ ...post, content: value })}
-                className="border-b pb-2 text-lg my-4 focus:outline-none w-full  h-64 font-light text-gray-500 placeholder-gray-500 y-2 rounded"
+                onChange={(e) => setPost({ ...post, content: e.target.value })}
+                className="border-b p-2 text-lg my-4 focus:outline-none w-full  h-64 font-light text-gray-500 placeholder-gray-500 y-2 rounded"
               />
             <button
               type="button"

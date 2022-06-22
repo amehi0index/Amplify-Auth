@@ -54,7 +54,7 @@ const EditComment = () => {
             {/* <SimpleMDE value={comment.content} onChange={value => setComment({ ...comment, content: value })} /> */}
              <textarea
                 value={comment.content}
-                onChange={value => setComment({ ...comment, content: value })}
+                onChange={(e) => setComment({ ...comment, content: e.target.value })}
                 className="border-b pb-2 text-lg my-4 focus:outline-none w-full  h-64 font-light text-gray-500 placeholder-gray-500 y-2 rounded"
               />
             <button
