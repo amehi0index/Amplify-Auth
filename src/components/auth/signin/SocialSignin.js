@@ -16,7 +16,6 @@ function SocialSignIn() {
           <p className="ml-3">Sign in with Facebook</p>
         </div>
       </button>
-
     </div>
   )
 }

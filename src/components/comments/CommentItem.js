@@ -7,7 +7,9 @@ import { getPost } from '../../graphql/queries';
 
 const CommentItem = ({ comment, postId }) => {
 
-    const [user, setUser] = useState()
+    const [username, setUsername] = useState()
+    const [commentAuthor, setCommentAuthor] = useState('')
+   
     let navigate = useNavigate()
 
     useEffect(() => {
@@ -17,8 +19,10 @@ const CommentItem = ({ comment, postId }) => {
     async function fetchUser() {
         const user = await Auth.currentAuthenticatedUser()
         // setUser(user.attributes.sub)
-        setUser(user.username)
-        console.log('user', user.username)
+        console.log('user', user.attributes.email)
+        setCommentAuthor(user.attributes.email)
+        setUsername(user.username)
+        console.log('username', user.username)
         console.log('comment owner', comment.owner)
     } 
  
@@ -45,11 +49,11 @@ const CommentItem = ({ comment, postId }) => {
 
     return (
         <div className="cursor-pointer border-b border-gray-300	mt-4 pb-2">
-            <p className="text-white mt-2 mb-2">{comment.owner} says: </p>
+            <p className="text-white mt-2 mb-2">{commentAuthor} says: </p>
             <p className="text-white mt-2 mb-2">{comment.content}</p>
             <p className="text-white mt-2 mb-2">Posted: {getDate(comment.createdAt)}</p>
             <div  className="flex w-full items-end justify-end">
-                {user === comment.owner && (
+                {username === comment.owner && (
                     <div>
                         <Link to={`/editcomment/${comment.id}`} state={postId} >
                             <span className="text-sm text-gray-200 mr-4 cursor-pointer">Edit</span>

@@ -3,8 +3,7 @@ import Input from '../../Input';
 
 const SignUp = ({ onChange, setUiState, signUp }) => {
   return (
-    <>
-        <div className="sm:w-540 mt-12 bg-white py-9 px-12 rounded shadow-lg">
+    <div className="sm:w-540 mt-12 bg-white py-9 px-12 rounded shadow-lg">
       <p className="text-3xl font-black">Sign Up</p>
 
       <div className="mt-6">
@@ -18,14 +17,14 @@ const SignUp = ({ onChange, setUiState, signUp }) => {
       </div>
 
       <div className="mt-7">
-          <label className="text-sm flex justify-between">
-            <span>Password</span>
-            <span
+        <label className="text-sm flex justify-between">
+          <span>Password</span>
+          <span
               className="ml-8 sm:ml-48 text-teal-500 cursor-pointer"
-            >(Minimum 8 Characters)</span>
-          </label>
-          <Input type="password" name="password" onChange={onChange} />
-        </div>
+          >(Minimum 8 Characters)</span>
+        </label>
+        <Input type="password" name="password" onChange={onChange} />
+      </div>
 
       <button onClick={signUp} className="text-white w-full mt-7 bg-teal-600 hover:bg-teal-700 p-3 rounded">
         Sign Up
@@ -38,8 +37,7 @@ const SignUp = ({ onChange, setUiState, signUp }) => {
           role="button"
           className="cursor-pointer text-teal-500 "> Sign In</span>
       </p>
-      </div>
-  </>     
+    </div>    
   )
 }
 

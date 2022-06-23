@@ -8,7 +8,7 @@ import { createComment } from '../../graphql/mutations'
 
 const initialState = { content: '' }
 
-function CreateComment({ props }) {  //post.id
+function CreateComment() {  
 
     const [comment, setComment] = useState(initialState)
     

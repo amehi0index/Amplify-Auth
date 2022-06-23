@@ -6,7 +6,7 @@ import { listPosts } from '../../graphql/queries'
 const AllPosts = () => {
 
   const [posts, setPosts] = useState([])
-  useEffect(() => {
+    useEffect(() => {
     fetchPosts()
   }, [])
   
@@ -15,12 +15,13 @@ const AllPosts = () => {
       query: listPosts
     })
     setPosts(postData.data.listPosts.items)
+    console.log(posts)
   }
 
   function getDate(isoStr) {
-  const formattedDate = new Date(isoStr.slice(0, -1));
+    const formattedDate = new Date(isoStr.slice(0, -1));
     return formattedDate.toString()
-}
+  }
 
   return (
     <div className="container-fluid w-1/2 flex px-6">
@@ -33,15 +34,15 @@ const AllPosts = () => {
                 <Link key={index} to={`/userpostitem/${post.id}`}>
                   <div className="cursor-pointer border-b border-gray-300	mt-4 pb-2">
                     <h2 className="text-xl font-semibold">{post.title}</h2>
-                    <p className="text-white mt-2 mb-2">Author: {post.owner}</p>
+                    <p className="text-white mt-2 mb-2">Author:{post.owner}</p>
                     <p className="text-white mt-2 mb-2">Posted: {getDate(post.createdAt)}</p>
                   </div>
                 </Link>
               ))
-              }
-            </div>
+            }
           </div>
         </div>
+      </div>
     </div>   
   )
 }

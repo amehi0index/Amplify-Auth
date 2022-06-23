@@ -3,8 +3,7 @@ import Input from '../../Input'
 
 const Signin = ({ onChange, setUiState, signIn }) => {
   return (
-    <>
-      <div className="sm:w-540 mt-12 bg-white py-9 px-12 rounded shadow-lg">
+    <div className="sm:w-540 mt-12 bg-white py-9 px-12 rounded shadow-lg">
       <p className="text-3xl font-black">Sign In</p>
 
       <div className="mt-6">
@@ -35,9 +34,8 @@ const Signin = ({ onChange, setUiState, signIn }) => {
           onClick={() => setUiState('signUp')}
           role="button"
           className="cursor-pointer text-teal-600"> Sign Up</span>
-        </p>
-        </div>
-    </> 
+      </p>
+    </div>
   )
 }
 

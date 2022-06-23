@@ -22,7 +22,6 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
             await Auth.signIn(email, password) 
             checkUser()
             setUiState('signedIn')
-            console.log(uiState)
         } catch (error) {
             console.log('error signing in', error);
         }
@@ -38,10 +37,10 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
                 nickname,
             }
           })
-          console.log(user);
+          console.log(user)
           setUiState('confirmSignUp')
       } catch (error) {
-          console.log('error signing up:', error);
+          console.log('error signing up:', error)
       }
   }
 

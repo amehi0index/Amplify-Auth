@@ -16,7 +16,7 @@ const AppRoutes = ({ user, setUser, checkUser, uiState, setUiState }) => {
 
   return (
    <Router>
-        <Navbar uiState={uiState} setUiState={setUiState} user={user} setUser={setUser} checkUser={checkUser} />   <div className="min-h-screen relative w-full flex justify-between">
+        <Navbar uiState={uiState} setUiState={setUiState} user={user} setUser={setUser} checkUser={checkUser} />   <div className="relative w-full flex justify-between">
           <div className="container-fluid w-full flex justify-around p-6" >
 
             <UIOptions uiState={uiState} setUiState={setUiState} checkUser={checkUser} user={user} />
