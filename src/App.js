@@ -15,8 +15,11 @@ function App() {
     try {
       const user = await Auth.currentAuthenticatedUser()
       console.log(user)
+
       const { email, nickname } = user.attributes
-      setUser(()=> nickname ? nickname : email)
+      // setUser(() => nickname ? nickname : email)
+      // setUser(user.username)
+      setUser(email)
       setUiState('signedIn')
       } catch (error) {
         setUser(null)

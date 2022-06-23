@@ -5,7 +5,6 @@ import ReactMarkdown from 'react-markdown'
 import { getPost } from '../../graphql/queries'
 import Comments from '../comments/Comments'
 
-
 export default function Post() {
 
     const [post, setPost] = useState(null)
@@ -38,7 +37,6 @@ export default function Post() {
                         <div className=" mx-4  text-white rounded-sm flex items-center">
                             <ReactMarkdown children={post.content} />
                         </div>
-                 
                     </div>
                         <Comments postId={post.id}  />
                 </div>
