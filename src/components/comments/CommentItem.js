@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react'
 import { API, Auth } from 'aws-amplify'
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
-import { deleteComment as deleteCommentMutation } from '../../graphql/mutations';
-import { getPost } from '../../graphql/queries';
+import { Link, useNavigate } from 'react-router-dom'
+import { deleteComment as deleteCommentMutation } from '../../graphql/mutations'
 
 const CommentItem = ({ comment, postId }) => {
 
@@ -18,8 +17,7 @@ const CommentItem = ({ comment, postId }) => {
 
     async function fetchUser() {
         const user = await Auth.currentAuthenticatedUser()
-        // setUser(user.attributes.sub)
-        console.log('user', user.attributes.email)
+        // console.log('user', user.attributes.email)
         setCommentAuthor(user.attributes.email)
         setUsername(user.username)
         console.log('username', user.username)
@@ -27,7 +25,7 @@ const CommentItem = ({ comment, postId }) => {
     } 
  
     function getDate(isoStr) {
-        const formattedDate = new Date(isoStr.slice(0, -1));
+        const formattedDate = new Date(isoStr.slice(0, -1))
         return formattedDate.toString()
     }
     

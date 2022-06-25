@@ -1,16 +1,16 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Auth } from 'aws-amplify'
-import { FaUserAlt, FaSignOutAlt } from 'react-icons/fa';
+import { FaUserAlt, FaSignOutAlt } from 'react-icons/fa'
 
 const Greeting = ({ user, setUser, setUiState }) => {
-   let navigate = useNavigate();
+   let navigate = useNavigate()
   
   const clickHandler = () => {
     Auth.signOut() 
     setUser(null)
     setUiState('homeIn')
-    navigate("/");
+    navigate('/')
   }
 
   return (

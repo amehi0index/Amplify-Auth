@@ -13,14 +13,16 @@ function App() {
 
   async function checkUser(){
     try {
-      const user = await Auth.currentAuthenticatedUser()
-      console.log(user)
 
-      const { email, nickname } = user.attributes
-      // setUser(() => nickname ? nickname : email)
-      // setUser(user.username)
-      setUser(email)
-      setUiState('signedIn')
+      const data = Auth.federatedSignIn({ provider: "Google", })
+
+      console.log(data)
+
+      const user = await Auth.currentAuthenticatedUser()
+      setUser(user)
+      // const { email, nickname } = user.attributes
+      // setUser(()=> nickname ? nickname : email)
+      // setUiState('signedIn')
       } catch (error) {
         setUser(null)
       //setUiState('signIn')
@@ -28,7 +30,13 @@ function App() {
   }
 
   return (
-    <AppRoutes user={user} setUser={setUser} checkUser={checkUser}  uiState={uiState} setUiState={setUiState} />
+    <AppRoutes
+      user={user}
+      setUser={setUser}
+      checkUser={checkUser}
+      uiState={uiState}
+      setUiState={setUiState}
+    />
   )
 }
 

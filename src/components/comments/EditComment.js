@@ -7,11 +7,11 @@ import { updateComment } from '../../graphql/mutations'
 import { getComment } from '../../graphql/queries'
 
 const EditComment = () => {
-  const location = useLocation();
-  const postId = location.state;
+  const location = useLocation()
+  const postId = location.state
 
   const [comment, setComment] = useState(null)
-  let { id } = useParams()
+  let { id } = useParams()  //comment id
 
   let navigate = useNavigate()
 
@@ -40,7 +40,6 @@ const EditComment = () => {
       variables: { input: commentUpdated },
       authMode: "AMAZON_COGNITO_USER_POOLS"
     })
-    console.log('comment successfully updated!')
 
     navigate(`/userpostitem/${postId}`) 
   }
