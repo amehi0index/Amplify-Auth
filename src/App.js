@@ -13,6 +13,7 @@ function App() {
 
   async function checkUser(){
     try {
+      
       const user = await Auth.currentAuthenticatedUser()
       const { email, nickname } = user.attributes
       setUser(()=> nickname ? nickname : email)

@@ -89,7 +89,7 @@ const UIOptions = ({ uiState, setUiState, checkUser, user }) => {
                         }
                         {
                             uiState === 'signIn' && (
-                                <SignIn onChange={onChange} setUiState={setUiState} signIn={""} />
+                                <SignIn onChange={onChange} setUiState={setUiState} signIn={signIn} />
                             )
                         }
                         {
