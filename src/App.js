@@ -13,16 +13,10 @@ function App() {
 
   async function checkUser(){
     try {
-
-      const data = Auth.federatedSignIn({ provider: "Google", })
-
-      console.log(data)
-
       const user = await Auth.currentAuthenticatedUser()
-      setUser(user)
-      // const { email, nickname } = user.attributes
-      // setUser(()=> nickname ? nickname : email)
-      // setUiState('signedIn')
+      const { email, nickname } = user.attributes
+      setUser(()=> nickname ? nickname : email)
+      setUiState('signedIn')
       } catch (error) {
         setUser(null)
       //setUiState('signIn')
